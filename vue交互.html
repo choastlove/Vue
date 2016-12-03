@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue交互</title>
+        <script src="js/vue.min.js"></script>
+        <script src="js/vue-resource.js"></script>
+        <script>
+            window.onload=function(){
+                new Vue({
+                    el:'#demo',
+                    data:{
+
+                    },
+                    methods:{
+                        get:function(){
+                            console.log(this);
+                            this.$http.get('a.txt').then(function(res){
+                                alert(res.data);
+                            },function(rej){
+                                alert("请求失败");
+                            });
+                        }
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <div id="demo">
+            <input type="button" @click="get()" value="按钮"/>
+        </div>
+    </body>
+</html>

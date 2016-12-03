@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue组件通信</title>
+        <script src='js/vue.min.js'></script>
+    </head>
+    <body>
+        <div id="demo">
+            <input type="text" v-model="parentMsg"/>
+            <child :my-message="parentMsg"></child>
+        </div>
+        <script>
+            Vue.component('child',{
+                props:['myMessage'],
+                template:'<span>{{myMessage}}</span>'
+            })
+            new Vue({
+                el:"#demo",
+                data:{
+                    parentMsg:0
+                }
+            });
+        </script>
+    </body>
+</html>

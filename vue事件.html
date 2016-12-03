@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue事件</title>
+        <script src="js/vue.min.js"></script>
+        <script>
+           window,onload=function(){
+             new Vue({
+                el:'#demo',
+                data:{
+
+                },
+                methods:{
+                    show:function(ev){
+                        alert(ev.clientX);
+                        alert(ev);
+                        // 输出object MouseEvent
+                        // 阻止事件冒泡
+                        ev.cancelBubble=true;
+                    },
+                    show2:function(){
+                        alert("bubble");
+                    }
+                }
+            })
+           }
+        </script>
+    </head>
+    <body>
+        <div id="demo">
+
+            <!-- $event Vue事件对象 -->
+
+            <div @click="show2()">
+                <input type="button" value="按钮" @click="show($event)"/>
+            </div>
+        </div>
+    </body>
+</html>

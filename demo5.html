@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue组件</title>
+        <script src="js/vue.min.js"></script>
+
+    </head>
+    <body>
+        <div id="example">
+          <my-component></my-component>
+        </div>
+        <script>
+
+        // 定义一个组件
+        var MyComponent=Vue.extend({
+            template:'<div>hello Vue.js</div>'
+        })
+        // 注册
+        Vue.component('my-component',MyComponent)
+        // 创建根实例
+        new Vue({
+            el:"# img/ example"
+        })
+
+        </script>
+    </body>
+</html>
+<!-- -->

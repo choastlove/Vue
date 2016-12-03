@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Vue</title>
+        <script src="js/vue.min.js"></script>
+    </head>
+    <body>
+        <div id="app" @click='doSomething()'>
+            <ul>
+                <li v-for='item in items'>
+                    <p v-text='item.label'></p>
+                </li>
+
+            </ul>
+        </div>
+        <script>
+             new Vue({
+                el:'#app',
+                // vue 中所有数据都是放在data参数里
+                data:{
+                    a:1,
+                    b:[],
+                    items:[
+                    {
+                        label:'apple'
+                    },
+                    {
+                        label:'banana'
+                    }
+                    ]
+                },
+                methods:{
+                    doSomething:function(){
+                        console.log(this.a);
+                    }
+                },
+                // watch对数据进行监听
+                watch:{
+                    a:function(val,oldVal){
+                        console.log(val,oldVal);
+                    }
+                }
+             })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue双向数据绑定</title>
+        <script src="js/vue.min.js"></script>
+        <script>
+            window.onload=function(){
+                new Vue({
+                    el:'#demo',
+                    data:{
+                        message:"hello vue",
+                        arr:['apple','banner','orange'],
+                        json:{a:'apple',b:'banner',c:'orange'}
+                    },
+                    methods:{
+                        show:function(){
+                            alert("我是测试methods");
+                        },
+                        add:function(){
+                            this.arr.push('tomato');
+                        }
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="demo">
+            <input type="text" v-model="message"/>
+            <p>{{message}}</p>
+            <ol>
+                <li v-for='value in arr'>{{value}}</li>
+            </ol>
+            <p @click="add()">添加水果</p>
+            <ul>
+                <li v-for="item in json">
+                    {{item}}
+
+                </li>
+            </ul>
+            <p @click='show()'>点击</p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue响应式原理</title>
+        <script src="js/vue.min.js"></script>
+
+    </head>
+    <body>
+        <div id="demo">
+            {{message}}
+        </div>
+        <script>
+            var vm=new Vue({
+                el:'#demo',
+                data:{
+                    message:''
+                },
+                template:"<div>{{message}}</div>"
+            })
+            vm.message="Hello Vue"
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>vue属性</title>
+        <style>
+            .red{
+                color:red;
+            }
+        </style>
+        <script src="js/vue.min.js"></script>
+        <script>
+            window.onload=function(){
+                new Vue({
+                    el:'#demo',
+                    data:{
+                        // "red"是指样式表中的.red
+                        red:'red'
+                    }
+                })
+            }
+        </script>
+    </head>
+    <body>
+        <div id="demo">
+        <!-- []里存放的是指data里的数据 -->
+            <p :class="[red]">我是测试</p>
+        </div>
+    </body>
+</html>
